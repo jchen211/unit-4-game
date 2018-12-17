@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Crystal Collector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  
+  <div class="container">
+    
+    <div class="title">
+        <h1>Crystals Collector</h1>
+    </div>
+        
+    <div class="row-1">    
+      <div class="instructions">
+          <p>You will be given a random number in the beginning.</p>
+          <br>
+          <p>There are 4 crystals below. By clicking on a cystal, you will be
+              add a specific amount of points to your total score.
+          </p>
+          <br>
+          <p>You will win the game by matching your total score to the random number,
+              you lose the game if your total score goes above the random number.
+          </p>
+          <br>
+          <p>The value of each cystal is hidden from you until you click on it.</p>
+          <br>
+          <p>Each time when the game starts, the game will change the values of each crystal.</p>
+
+     
+        </div>
+            
+      <div class="wins-losses">
+          <p>wins and losses</p>
+      </div>
+    </div>
+    
+    <div class="row-2">
+      <div class="rand-box">
+          <p id="randNumb">random number</p>
+      </div>
+
+      <div class="your-total">
+          <p id="addedTotal">total</p>
+      </div>
+    </div>
+
+    <div class="allCrys" id="allCrystals">
+          <img src="assets/images/purple.svg" id="crystal-1" alt="crystal-1" width="150px">
+          <img src="assets/images/red.svg" id="crystal-2" alt="crystal-2" width="150px">
+          <img src="assets/images/green.svg" id="crystal-3" alt="crystal-3" width="150px">
+          <img src="assets/images/blue.svg" id="crystal-4" alt="crystal-4" width="150px">  
+          <p id=test> sdf</p>      
+    </div>
+
+  </div>
+   
+
+
+
+<!--script-->
+    <script src="assets/javascript/game.js"></script>
+
+</body>
+</html>
