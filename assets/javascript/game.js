@@ -22,10 +22,11 @@ crysNum = {
 function startGame() {
     getRandomNumber();
     $('#randNumb').text(getRandomNumber());
-    crysNum.getCrystal();
-    $('#test').text(crysNum.getCrystal());
+    total = 0;
 
 }
+
+
 
 var imgCrys1 = $('#crystal-1');
     imgCrys1.attr('data-crys', crysNum.getCrystal()); 
@@ -43,11 +44,24 @@ var imgCrys1 = $('#crystal-4');
     imgCrys1.attr('data-crys', crysNum.getCrystal()); 
     $('crystal-4').append(imgCrys1);
 
-$('img').on("click", function() {
-    $('#allCrystals').data("getCrys", crysNum.getCrystal());
-    $('img').data('getCrys');
+$('#crystal-1').on("click", function() {
+    var crystalValue = ($(this).attr("data-crys"));
+    crystalValue = parseInt(crystalValue);
+
+    var newTotal = total += crystalValue;
+    $('#addedTotal').text(newTotal);
     })
+
+    $('#crystal-1').on("click", function() {
+        var crystalValue = ($(this).attr("data-crys"));
+        crystalValue = parseInt(crystalValue);
     
+        var newTotal = total += crystalValue;
+        $('#addedTotal').text(newTotal);
+        })    
+
+
+
     startGame();
 
 });
