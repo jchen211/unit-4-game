@@ -1,15 +1,16 @@
 $(document).ready(function(){
 
 var total = 0;
-var crysNum = [];
+var crysNum ;
+var number;
 var wins = 0;
 var losses = 0;
 
-function getRandomNumber(min, max) {
-    min = 19;
-    max = 120;
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+
+var min = 19;
+var max = 120;
+number =  Math.floor(Math.random() * (max - min + 1)) + min;
+
 
 crysNum = {
   getCrystal: function (min, max) {
@@ -20,13 +21,14 @@ crysNum = {
 }
 
 function startGame() {
-    getRandomNumber();
-    $('#randNumb').text(getRandomNumber());
+    $('#randNumb').text(number);
     total = 0;
 
 }
+var totalClicks;
 
-
+totalClicks = {
+    crysClicks: function() {
 
 var imgCrys1 = $('#crystal-1');
     imgCrys1.attr('data-crys', crysNum.getCrystal()); 
@@ -44,30 +46,60 @@ var imgCrys4 = $('#crystal-4');
     imgCrys4.attr('data-crys', crysNum.getCrystal()); 
     $('crystal-4').append(imgCrys4);
 
-function crysClicks () {
 
     $('#crystal-1').on("click", function() {
-        var crystalValue = ($(this).attr("data-crys"));
+       var crystalValue = ($(this).attr("data-crys"));
         crystalValue = parseInt(crystalValue);
 
-        var newTotal = total += crystalValue;
+      var newTotal = total += crystalValue;
         $('#addedTotal').text(newTotal);
+
+        if (newTotal === number) {
+            wins++;
+        $('#wins').text(wins);
+        
+        } 
+
+        if (newTotal > number) {
+            lose++;
+        $('#losses').text(losses);
+        }
     })
 
     $('#crystal-2').on("click", function() {
         var crystalValue = ($(this).attr("data-crys"));
         crystalValue = parseInt(crystalValue);
     
-         var newTotal = total += crystalValue;
+        var newTotal = total += crystalValue;
         $('#addedTotal').text(newTotal);
+
+        if (newTotal === number) {
+            wins++;
+        $('#wins').text(wins);
+        
+        } if (newTotal > number) {
+            lose++;
+        $('#losses').text(losses);
+        }
         })    
 
     $('#crystal-3').on("click", function() {
         var crystalValue = ($(this).attr("data-crys"));
         crystalValue = parseInt(crystalValue);
     
-        var newTotal = total += crystalValue;
+      var newTotal = total += crystalValue;
         $('#addedTotal').text(newTotal);
+
+        if (newTotal === number) {
+            wins++;
+        $('#wins').text(wins);
+        
+        } 
+
+        if (newTotal > number) {
+            lose++;
+        $('#losses').text(losses);
+        }
         })  
 
     $('#crystal-4').on("click", function() {
@@ -76,10 +108,23 @@ function crysClicks () {
     
         var newTotal = total += crystalValue;
         $('#addedTotal').text(newTotal);
-        })  
-    }
 
-    crysClicks();
+        if (newTotal === number) {
+            wins++;
+        $('#wins').text(wins);
+        
+        } 
+
+        if (newTotal > number) {
+            lose++;
+        $('#losses').text(losses);
+        }
+        })  
+}
+}    
+totalClicks.crysClicks();
+ 
+
 
     startGame();
 
