@@ -6,6 +6,7 @@ var wins = 0;
 var losses = 0;
 var newTotal;
 var number;
+
 $("#crystal-1").on("click", purpleCrys);
 $("#crystal-2").on("click", redCrys);
 $("#crystal-3").on("click", greenCrys);
@@ -21,8 +22,8 @@ function getWin() {
         $('#addedTotal').text(total);
 
         startGame();
-    }
-    else if (newTotal > number) {
+
+    } else if (newTotal > number) {
         losses++;
         $('#losses').text("losses: " + losses);
         
@@ -106,7 +107,7 @@ function blueCrys() {
     getWin();
     } 
 
-    startGame();
+startGame();
 
 });
 
