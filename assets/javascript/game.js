@@ -4,7 +4,6 @@ var total = 0;
 var crysNum;
 var wins = 0;
 var losses = 0;
-var isWinner = false;
 var newTotal;
 
 $("#crystal-1").on("click", purpleCrys);
@@ -16,7 +15,7 @@ $("#crystal-4").on("click", blueCrys);
 var min = 19;
 var max = 120;
 var number = Math.floor(Math.random() * (max - min + 1)) + min;
-  
+$('#randNumb').text(number);
 
 crysNum = {
   getCrystal: function (min, max) {
@@ -26,19 +25,26 @@ crysNum = {
   }
 }
 
-function startGame() {
-    number;
-    $('#randNumb').text(number);
-}
+//function resetGame(){
+//    total = 0;
+//    $('#addedTotal').text(total);
+//    number;
+//    $('#randNumb').text(number);
+//}
 
 function getWin() {
     if (newTotal === number) {
         wins++;
-    $('#wins').text(wins);
+    $('#wins').text("wins: " + wins);
+    total = 0;
+    $('#addedTotal').text(total);
     }
     else if (newTotal > number) {
         losses++;
-    $('#losses').text(losses);
+        $('#losses').text("losses: " + losses);
+        
+        total = 0;
+        $('#addedTotal').text(total);
     }
 }
 
@@ -100,7 +106,5 @@ function blueCrys() {
     } 
 
 
-
-startGame();
 });
 
