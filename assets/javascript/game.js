@@ -48,8 +48,6 @@ function startGame() {
       }
     }
 
-    
-
 var imgCrys1 = $('#crystal-1');
 imgCrys1.attr('data-crys', crysNum.getCrystal()); 
 $('crystal-1').append(imgCrys1);
@@ -65,6 +63,7 @@ $('crystal-3').append(imgCrys3);
 var imgCrys4 = $('#crystal-4');
 imgCrys4.attr('data-crys', crysNum.getCrystal()); 
 $('crystal-4').append(imgCrys4);
+
 }
 
 function purpleCrys() {
